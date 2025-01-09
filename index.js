@@ -4,7 +4,7 @@ import dotenv from "dotenv"
 import cookieParser from "cookie-parser"
 import cors from "cors"
 import authRouter from "./routes/auth.route.js"
-
+import noteRouter from "./routes/note.route.js"
 
 dotenv.config()
 
@@ -30,6 +30,7 @@ app.listen(3000, () => {
 
 
 app.use("/api/auth", authRouter)
+app.use("/api/note", noteRouter)
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500
