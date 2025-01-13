@@ -22,10 +22,11 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-  origin: "*",
+  origin: "https://kreatorverse-task-server-production.up.railway.app",
   credentials: true,
-  optionsSuccessStatus: 200,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type,Authorization",
+
 }))
 app.listen(3000, () => {
   console.log("Server is running on port 3000")
