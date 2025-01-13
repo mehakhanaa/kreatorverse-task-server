@@ -22,7 +22,7 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-  origin: process.env.CLIENT_URL,
+  origin: "*",
   credentials: true,
   optionsSuccessStatus: 200,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
