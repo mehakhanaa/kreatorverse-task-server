@@ -55,7 +55,7 @@ export const signin = async (req, res, next) => {
     res.cookie("access_token", token, { 
       httpOnly: true,
       secure: process.env.NODE_ENV === "prod",
-      sameSite: "strict"
+      sameSite: "None"
      }).status(200).json({
       success: true,
       message: "Login Successful!",
