@@ -52,12 +52,18 @@ export const signin = async (req, res, next) => {
 
     const { password: pass, ...rest } = validUser._doc
 
-    res.cookie("access_token", token).status(200).json({
+    res.cookie("access_token", token, {
+      httpOnly: true, 
+      secure: true, 
+      sameSite: "None",
+      domain: "https://kreatorverse-task-server-production.up.railway.app",
+      path: "/", 
+    }).status(200).json({
       success: true,
       message: "Login Successful!",
       data: rest,
-    })
-  } catch (error) {
+    });
+      } catch (error) {
     next(error)
   }
 }
