@@ -22,7 +22,7 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-  origin: "https://kreatorverse-task-server-production.up.railway.app",
+  origin: "https://kreatorverse-task-client.vercel.app",
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: "Content-Type,Authorization",
